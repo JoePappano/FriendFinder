@@ -1,8 +1,84 @@
 var friendsList = [
     {
-        firstName: "Tony",
-        lastName: "Morelli"
-    }
+        "name":"Ahmed",
+        "photo":"http://lefunny.net/wp-content/uploads/2014/08/8589130426275-funny-people-wallpaper-hd.jpg",
+        "scores":[
+            5,
+            1,
+            4,
+            4,
+            5,
+            1,
+            2,
+            5,
+            4,
+            1
+          ]
+      },
+      {
+        "name":"Jeremy",
+        "photo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK5dEQpmVvPCxH-jKYN-qiVP1pqoxEwXEmeiL0W79YpPpSjeue",
+        "scores":[
+            5,
+            1,
+            3,
+            2,
+            1,
+            2,
+            3,
+            1,
+            1,
+            1
+          ]
+      },
+      {
+        "name":"Ben",
+        "photo":"https://i.pinimg.com/originals/13/52/29/135229b61d2504b869a6c54191e36c83.jpg",
+        "scores":[
+            4,
+            4,
+            2,
+            1,
+            3,
+            5,
+            5,
+            5,
+            4,
+            5
+          ]
+      },
+      {
+        "name":"Danny",
+        "photo":"https://static.boredpanda.com/blog/wp-content/uploads/2016/03/funny-snapchat-face-swaps-261__605.jpg",
+        "scores":[
+            2,
+            2,
+            2,
+            2,
+            1,
+            2,
+            2,
+            1,
+            1,
+            1
+          ]
+      },
+      {
+        "name":"Paul",
+        "photo":"https://static.boredpanda.com/blog/wp-content/uploads/2018/03/funny-embarrassing-childhood-youth-pictures-coverimage.jpg",
+        "scores":[
+            5,
+            3,
+            3,
+            2,
+            4,
+            2,
+            3,
+            1,
+            1,
+            1
+          ]
+      }
 ];
 
 module.exports = friendsList;
