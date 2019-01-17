@@ -25,13 +25,13 @@
         <div class="card-body">
           <h5 class="card-title">About You</h5>
           <p class="card-text">Name (required)</p>
-          <input style="width:100%;" />
+          <input id="nameInput" style="width:100%;" />
           <p class="card-text">Picture (required)</p>
-          <input style="width:100%;" />
+          <input id="picUrl" style="width:100%;" />
           <hr />
           <h3>Questions</h3>
           <p>1) Your mind is always buzzing with unexplored ideas and plans.</p>
-          <select style="width: 50px;">
+          <select id="q1" style="width: 50px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -42,7 +42,7 @@
             2) Generally speaking, you rely more on your experience than your
             imagination.
           </p>
-          <select style="width: 50px;">
+          <select id="q2" style="width: 50px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -53,7 +53,7 @@
             3) You find it easy to stay relaxed and focused even when there is
             some pressure.
           </p>
-          <select style="width: 50px;">
+          <select id="q3" style="width: 50px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -61,7 +61,7 @@
             <option value="5">5</option>
           </select>
           <p>4) You rarely do something just out of sheer curiosity.</p>
-          <select style="width: 50px;">
+          <select id="q4" style="width: 50px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -69,7 +69,7 @@
             <option value="5">5</option>
           </select>
           <p>5) People can rarely upset you.</p>
-          <select style="width: 50px;">
+          <select id="q5" style="width: 50px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -80,7 +80,7 @@
             6) It is often difficult for you to relate to other people’s
             feelings.
           </p>
-          <select style="width: 50px;">
+          <select id="q6" style="width: 50px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -91,7 +91,7 @@
             7) In a discussion, truth should be more important than people’s
             sensitivities.
           </p>
-          <select style="width: 50px;">
+          <select id="q7" style="width: 50px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -99,7 +99,7 @@
             <option value="5">5</option>
           </select>
           <p>8) You rarely get carried away by fantasies and ideas.</p>
-          <select style="width: 50px;">
+          <select id="q8" style="width: 50px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -110,7 +110,7 @@
             9) You think that everyone’s views should be respected regardless of
             whether they are supported by facts or not.
           </p>
-          <select style="width: 50px;">
+          <select id="q9" style="width: 50px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -121,7 +121,7 @@
             10) You feel more energetic after spending time with a group of
             people.
           </p>
-          <select style="width: 50px;">
+          <select id="q10" style="width: 50px;">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -154,11 +154,41 @@
 
   <script>
     $(document).ready(function() {
+    var newFriend = {
+        name: firstName,
+        URL: picUrl,
+        score: newArray
+    }
       var newArray = [];
+    //   $('select :selected').change(function(){
+    //     console.log('change', this)
+    //     });
+    // $('select').change(function() {
+    //     console.warn('chaaaange', this, $(this).children(':selected').attr('value'))
+    //  $(this).children(':selected').attr('selected', true);
+    // });
 
       $("#submit").on("click", function() {
-        $(option).push(newArray); 
+        var name = $("#nameInput").val().toLowerCase().trim();
+        var picUrl = $("#picUrl").val();
+
+        newFriend.name = name;
+        newFriend.URL = picUrl;
+
+          newArray.push($("#q1").children(":selected").attr("value"));
+          newArray.push($("#q2").children(":selected").attr("value"));
+          newArray.push($("#q3").children(":selected").attr("value"));
+          newArray.push($("#q4").children(":selected").attr("value"));
+          newArray.push($("#q5").children(":selected").attr("value"));
+          newArray.push($("#q6").children(":selected").attr("value"));
+          newArray.push($("#q7").children(":selected").attr("value"));
+          newArray.push($("#q8").children(":selected").attr("value"));
+          newArray.push($("#q9").children(":selected").attr("value"));
+          newArray.push($("#q10").children(":selected").attr("value"));
+        //   console.log('submit', option)
+        // $(option).attr('value').push(newArray); 
         console.log(newArray);
+        console.log(newFriend);
       });
 
     //   for (i = 0; i < friendsList.length; i++) {
