@@ -154,6 +154,11 @@
 
   <script>
     $(document).ready(function() {
+
+    var firstName;
+    var picUrl;
+    var score;
+
     var newFriend = {
         name: firstName,
         URL: picUrl,
@@ -169,11 +174,10 @@
     // });
 
       $("#submit").on("click", function() {
-        var name = $("#nameInput").val().toLowerCase().trim();
+        var firstName = $("#nameInput").val().toLowerCase().trim();
         var picUrl = $("#picUrl").val();
 
-        newFriend.name = name;
-        newFriend.URL = picUrl;
+        
 
           newArray.push($("#q1").children(":selected").attr("value"));
           newArray.push($("#q2").children(":selected").attr("value"));
@@ -185,6 +189,11 @@
           newArray.push($("#q8").children(":selected").attr("value"));
           newArray.push($("#q9").children(":selected").attr("value"));
           newArray.push($("#q10").children(":selected").attr("value"));
+
+        newFriend.name = firstName;
+        newFriend.URL = picUrl;
+        newFriend.score = newArray;
+
         //   console.log('submit', option)
         // $(option).attr('value').push(newArray); 
         console.log(newArray);
