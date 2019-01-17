@@ -137,10 +137,9 @@
     </div>
   </body>
   <script
-    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"
-  ></script>
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
     integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
@@ -157,12 +156,12 @@
 
     var firstName;
     var picUrl;
-    var score;
+    var scores;
 
     var newFriend = {
         name: firstName,
         URL: picUrl,
-        score: newArray
+        scores: newArray
     }
       var newArray = [];
     //   $('select :selected').change(function(){
@@ -192,13 +191,34 @@
 
         newFriend.name = firstName;
         newFriend.URL = picUrl;
-        newFriend.score = newArray;
+        newFriend.scores = newArray;
 
         //   console.log('submit', option)
         // $(option).attr('value').push(newArray); 
-        console.log(newArray);
-        console.log(newFriend);
+        // console.log(newArray);
+        // console.log(newFriend);
+
+        var currentURL = window.location.origin;
+        var scoresDiff = [];
+
+        $.ajax({url: currentURL + "/friends", method: "GET"})
+            .done(function(response) {
+                console.log(response);
+                for (i = 0; i < response.length; i++) {
+                    console.log(response[i].scores);
+                    var totalNum = response[i].reduce(scores);
+                    console.log(totalNum)
+                }
+            })
+
+        // $.post(currentURL + "/friends", newFriend, function(data) {
+        //     console.log("It has been pushed!")
+        // })
+
+
       });
+
+
 
     //   for (i = 0; i < friendsList.length; i++) {
     //       if (newArray.reduce() is close to friendsList[i].scores.reduce) {
