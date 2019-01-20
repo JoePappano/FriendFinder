@@ -19,6 +19,30 @@
   </head>
   <body>
     <div class="container">
+
+      
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Your Best Match!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="modalBody">
+                <!--Data in here-->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       <div class="card">
         <h5 class="card-header">Survey Questions</h5>
         <br />
@@ -129,9 +153,9 @@
             <option value="5">5</option>
           </select>
           <br /><br />
-          <a id="submit" href="#" class="btn btn-primary" style="width: 100%;"
-            >Submit</a
-          >
+          <button id="submit" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="width:100%">
+              Launch demo modal
+            </button>
         </div>
       </div>
     </div>
@@ -195,7 +219,7 @@
 
         //   console.log('submit', option)
         // $(option).attr('value').push(newArray); 
-        // console.log(newArray);
+        console.log("New Array: " + newArray);
         // console.log(newFriend);
 
         var currentURL = window.location.origin;
@@ -220,28 +244,34 @@
                 for (i = 0; i < response.length; i++) {
                     friendDiffArr.push({
                       name: response[i].name,
-                      friendScore: response[i].scores.reduce((a, b) => a+b, 0)
+                      pic: response[i].photo,
+                      friendScore: parseInt(response[i].scores.reduce((a, b) => a+b, 0))
                     }) ;
                 }
 
                 // friendDiffArr.filter
                 for (i = 0; i < friendDiffArr.length; i++) {
-                    friendDiffArr[i]["diffScore"] = parseInt(friendDiffArr[i].friendScore - inputScore);
+                    friendDiffArr[i]["diffScore"] = parseInt(Math.abs(friendDiffArr[i].friendScore - inputScore));
                 }
 
                 console.log(friendDiffArr);
 
                 var sortedDiff = friendDiffArr.sort((a, b) => a.diffScore - b.diffScore);
                 console.log("Sorted Array: ", sortedDiff)
+                console.log("Photo: " + sortedDiff[0].pic);
                 console.log("Matched Friend: " + sortedDiff[0].name);
                 
-                
+                friendDiv = $("<div>");
+                friendName = $("<p>");
+                friendPic = $("<img>");
+                friendName.text(sortedDiff[0].name);
+                friendPic.attr("src", sortedDiff[0].pic);
+                friendPic.attr("class", "img-fluid")
+                friendDiv.append(friendName);
+                friendDiv.append(friendPic);
+                $("#modalBody").prepend(friendDiv);
 
             })
-
-        $.post(currentURL + "/friends", newFriend, function(data) {
-            console.log("It has been pushed!")
-        })
 
 
       });
