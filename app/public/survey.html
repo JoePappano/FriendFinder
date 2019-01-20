@@ -36,7 +36,7 @@
                 <!--Data in here-->
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="reload" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -196,6 +196,10 @@
     //  $(this).children(':selected').attr('selected', true);
     // });
 
+function reloadPage() {
+  window.location.reload()
+}
+
       $("#submit").on("click", function() {
         var firstName = $("#nameInput").val().toLowerCase().trim();
         var picUrl = $("#picUrl").val();
@@ -275,6 +279,10 @@
 
 
       });
+
+      $("#reload").on("click", function() {
+        location.reload();
+      })
 
 
 
