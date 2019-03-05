@@ -1,7 +1,7 @@
 var friendsList = [
     {
         "name":"Ahmed",
-        "photo":"http://lefunny.net/wp-content/uploads/2014/08/8589130426275-funny-people-wallpaper-hd.jpg",
+        "photo":"http://oscarblustinphotography.com/wp-content/uploads/2015/08/BenStarrHeadshotColour.jpg",
         "scores":[
             5,
             1,
@@ -17,7 +17,7 @@ var friendsList = [
       },
       {
         "name":"Jeremy",
-        "photo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK5dEQpmVvPCxH-jKYN-qiVP1pqoxEwXEmeiL0W79YpPpSjeue",
+        "photo":"http://rorylewisphotography.com/wp-content/uploads/2013/09/DSCF6374__Snapseed.jpg",
         "scores":[
             5,
             1,
@@ -33,7 +33,7 @@ var friendsList = [
       },
       {
         "name":"Ben",
-        "photo":"https://i.pinimg.com/originals/13/52/29/135229b61d2504b869a6c54191e36c83.jpg",
+        "photo":"https://i.pinimg.com/originals/b6/62/70/b66270ba738971ff23c8f3cc0a73ab72.jpg",
         "scores":[
             4,
             4,
@@ -49,7 +49,7 @@ var friendsList = [
       },
       {
         "name":"Danny",
-        "photo":"https://static.boredpanda.com/blog/wp-content/uploads/2016/03/funny-snapchat-face-swaps-261__605.jpg",
+        "photo":"https://static1.squarespace.com/static/59264d77bf629abedee73c68/59264dee03596ee2c04904cc/5928dc2a03596ef189633533/1495857137023/CF000282_13w.jpg?format=2500w",
         "scores":[
             2,
             2,
@@ -65,7 +65,7 @@ var friendsList = [
       },
       {
         "name":"Paul",
-        "photo":"https://static.boredpanda.com/blog/wp-content/uploads/2018/03/funny-embarrassing-childhood-youth-pictures-coverimage.jpg",
+        "photo":"https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         "scores":[
             5,
             3,
